@@ -47,9 +47,9 @@ var DrawFaceLandmarks = /** @class */ (function () {
                 ctx.arc(pt.x, pt.y, pointSize, 0, 2 * Math.PI);
                 ctx.fill();
             };
+    };
             this.faceLandmarks.positions.forEach(drawPoint);
         }
-    };
     return DrawFaceLandmarks;
 }());
 exports.DrawFaceLandmarks = DrawFaceLandmarks;
