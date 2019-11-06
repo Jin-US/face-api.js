@@ -45,7 +45,7 @@ var app = express();
 app.get('/', function (request, response) {
     response.send(faceLandmarkDetection);
 });
-app.listen(8080);
+app.listen(8081);
 function run() {
     return __awaiter(this, void 0, void 0, function () {
         var img, detections, out;

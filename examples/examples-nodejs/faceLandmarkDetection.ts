@@ -13,7 +13,7 @@ async function run() {
   const results = await faceapi.detectAllFaces(img, faceDetectionOptions)
     .withFaceLandmarks()
 
-  console.log(results[0].detection)
+//   console.log(results[0].detection)
   exports.results = results
 
 
