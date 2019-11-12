@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var faceapi = require("face-api.js");
 var commons_1 = require("./commons");
-function run() {
+async function run(filename) {
     return __awaiter(this, void 0, void 0, function () {
         var img, results, out;
         return __generator(this, function (_a) {
@@ -49,7 +49,7 @@ function run() {
                     return [4 /*yield*/, faceapi.nets.faceLandmark68Net.loadFromDisk('../../weights')];
                 case 2:
                     _a.sent();
-                    return [4 /*yield*/, commons_1.canvas.loadImage('../images/bbt1.jpg')];
+                    return [4 /*yield*/, commons_1.canvas.loadImage('./',filename)];
                 case 3:
                     img = _a.sent();
                     return [4 /*yield*/, faceapi.detectAllFaces(img, commons_1.faceDetectionOptions)
@@ -62,7 +62,7 @@ function run() {
                     faceapi.draw.drawDetections(out, results.map(function (res) { return res.detection; }));
                     faceapi.draw.drawFaceLandmarks(out, results.map(function (res) { return res.landmarks; }));
                     commons_1.saveFile('faceLandmarkDetection.jpg', out.toBuffer('image/jpeg'));
-                    console.log('done, saved results to out/faceLandmarkDetection.jpg');
+                    console.log('1qqqqqqqqqqqq1 done, saved results to out/faceLandmarkDetection.jpg');
                     return [2 /*return*/];
             }
         });

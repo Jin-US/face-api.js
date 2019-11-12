@@ -1,20 +1,25 @@
+import { Request, Response } from 'express'
 import * as tf from '@tensorflow/tfjs-node';
 
 import * as faceapi from 'face-api.js';
 
 import { canvas, faceDetectionNet, faceDetectionOptions, saveFile } from './commons';
 
-async function run() {
+import * as output from './Controllers/output'
+
+
+exports.run =async function(filename : String) {
 
   await faceDetectionNet.loadFromDisk('../../weights')
   await faceapi.nets.faceLandmark68Net.loadFromDisk('../../weights')
 
-  const img = await canvas.loadImage('../images/bbt1.jpg')
+  const img = await canvas.loadImage(filename)
   const results = await faceapi.detectAllFaces(img, faceDetectionOptions)
     .withFaceLandmarks()
 
+
 //   console.log(results[0].detection)
-  exports.results = results
+//   exports.results = results
 
 
   const out = faceapi.createCanvasFromMedia(img) as any
@@ -24,8 +29,9 @@ async function run() {
 
 
 
-  saveFile('faceLandmarkDetection.jpg', out.toBuffer('image/jpeg'))
+  saveFile('faceLandmarkDetection.jpg', out.toBuffer('imWage/jpeg'))
   console.log('done, saved results to out/faceLandmarkDetection.jpg')
+//   res.send(results)
 }
 
-run()
+// run()
