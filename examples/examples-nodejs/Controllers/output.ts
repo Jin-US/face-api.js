@@ -2,19 +2,44 @@ import { Request, Response } from 'express'
 import * as faceLandmarkDetection from '../faceLandmarkDetection'
 import { canvas, faceDetectionNet, faceDetectionOptions, saveFile } from '../commons';
 import * as faceapi from 'face-api.js';
-import * as err from '../faceDetection'
+import * as app from '../faceDetection'
+
+export function echo (req: Request, res: Response) {
+    var imageUrl = (req.query.imageUrl)
+    console.log(imageUrl)
+    img_downloader(imageUrl,req,res)
+
+    return
+}
+
+// https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+async function img_downloader(imageUrl: String,req: Request, res: Response) {
+
+    const download = require('image-downloader')
+    const options = {
+        url: imageUrl,
+        dest: './'
+    }
 
 
-//export function echo(req: Request, res: Response) {
-//  res.json(req.query)
-//  console.log("aaa")
-//}
+    try {
+        console.log("download image")
+        const { filename, image } = await download.image(options)
+        console.log(filename) // => /path/to/dest/image.jpg
+        await run(filename,req,res)
+        console.log("222222222222")
+    } catch (e) {
+        console.error(e)
+    }
+}
 
-async function run() {
+
+async function run(filename : String,req: Request, res: Response) {
 
   await faceDetectionNet.loadFromDisk('../../weights')
 
-  const img = await canvas.loadImage('../images/bbt1.jpg')
+  const img = await canvas.loadImage('./'+filename)
+  console.log(img)
   const detections = await faceapi.detectAllFaces(img, faceDetectionOptions)
 
   const out = faceapi.createCanvasFromMedia(img) as any
@@ -23,16 +48,5 @@ async function run() {
 
   saveFile('faceDetection.jpg', out.toBuffer('image/jpeg'))
   console.log('done, saved results to out/faceDetection.jpg')
-
-//   console.log(img)
-//   console.log(faceLandmarkDetection)
-
-}
-
-
-export function echo (req: Request, res: Response) {
-        run()
-        res.send(faceLandmarkDetection)
-
-    return
+  res.send(faceLandmarkDetection)
 }

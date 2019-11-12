@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const { get } = require('request')
+import { Request, Response } from 'express'
 
 const app = express()
 
@@ -48,7 +49,7 @@ app.post('/fetch_external_image', async (req, res) => {
   }
 })
 
-app.listen(3000, () => console.log('Listening on port 3000!'))
+app.listen(8081, () => console.log('Listening on port 8081!'))
 
 function request(url, returnBuffer = true, timeout = 10000) {
   return new Promise(function(resolve, reject) {
