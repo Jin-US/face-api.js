@@ -54,8 +54,8 @@ async function run(filename : String,req: Request, res: Response) {
 
   const faceLandmarkDetection = require('../faceLandmarkDetection')
 
-  await faceLandmarkDetection.run(filename)
-  await res.send(faceLandmarkDetection)
+  const detectionResult = await faceLandmarkDetection.run(filename)
+  await res.send(detectionResult)
 }
 
 
