@@ -1,6 +1,4 @@
 import { Request, Response } from 'express'
-// import * as faceLandmarkDetection from '../faceLandmarkDetection'
-// import * as faceLandmarkDetection from '../faceLandmarkDetection'
 import { canvas, faceDetectionNet, faceDetectionOptions, saveFile } from '../commons';
 import * as faceapi from 'face-api.js';
 import * as app from '../faceDetection'
