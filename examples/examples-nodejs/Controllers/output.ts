@@ -1,6 +1,4 @@
 import { Request, Response } from 'express'
-// import * as faceLandmarkDetection from '../faceLandmarkDetection'
-// import * as faceLandmarkDetection from '../faceLandmarkDetection'
 import { canvas, faceDetectionNet, faceDetectionOptions, saveFile } from '../commons';
 import * as faceapi from 'face-api.js';
 import * as app from '../faceDetection'
@@ -13,7 +11,7 @@ export function echo (req: Request, res: Response) {
     return
 }
 
-// https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+
 async function img_downloader(imageUrl: String,req: Request, res: Response) {
 
     const download = require('image-downloader')
@@ -60,3 +58,4 @@ async function run(filename : String,req: Request, res: Response) {
 
 
 // http://localhost:8081/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+// https://homepages.cae.wisc.edu/~ece533/images/airplane.png
