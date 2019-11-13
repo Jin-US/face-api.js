@@ -1,21 +1,3 @@
-# running ts-node
-``` bash
-cd face-api.js
-npm i
-```
-Now run one of the examples using ts-node:
-``` bash
-npm start
-```
-
-#get rest-api
-Browse to http://localhost:8081/echo?imageUrl='image-url'
-
-``` bash
-http://localhost:8081/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/girl.png
-```
-
-
 # face-api.js
 
 [![Build Status](https://travis-ci.org/justadudewhohacks/face-api.js.svg?branch=master)](https://travis-ci.org/justadudewhohacks/face-api.js)
@@ -94,24 +76,38 @@ npm start
 
 Browse to http://localhost:3000/.
 
-## Running the Nodejs Examples
 
+## Running the Nodejs Examples
 ``` bash
 cd face-api.js/examples/examples-nodejs
 npm i
 ```
-
-Now run one of the examples using ts-node:
-
+cd face-api.js
 ``` bash
-ts-node faceDetection.ts
+cd ../..
+npm i
+```
+Now run one of the examples using ts-node:
+``` bash
+npm start
 ```
 
-Or simply compile and run them with node:
+#get rest-api
+Browse to http://localhost:8081/echo?imageUrl='image-url'
 
 ``` bash
-tsc faceDetection.ts
-node faceDetection.js
+http://localhost:8081/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/girl.png
+```
+
+# use docker
+build
+``` bash
+docker build -t appname .
+```
+
+run
+``` bash
+docker run -it -p 8081:8081  appname
 ```
 
 <a name="face-api.js-for-the-browser"></a>
