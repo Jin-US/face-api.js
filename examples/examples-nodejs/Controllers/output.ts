@@ -5,7 +5,7 @@ import * as app from '../faceDetection'
 
 export function echo (req: Request, res: Response) {
     var imageUrl = (req.query.imageUrl)
-    console.log('1', imageUrl)
+    console.log(imageUrl)
     img_downloader(imageUrl,req,res)
 
     return
@@ -23,10 +23,9 @@ async function img_downloader(imageUrl: String,req: Request, res: Response) {
     try {
         console.log("download image")
         const { filename, image } = await download.image(options)
-        console.log('2', filename) // => /path/to/dest/image.jpg
+        console.log(filename) // => /path/to/dest/image.jpg
         await run(filename,req,res)
         exports.filename = filename
-        console.log("222222222222")
     } catch (e) {
         console.error(e)
     }
@@ -39,7 +38,7 @@ async function run(filename : String,req: Request, res: Response) {
 
   const img = await canvas.loadImage('./'+filename)
   exports.img = img
-  console.log('3', img)
+  console.log(img)
   const detections = await faceapi.detectAllFaces(img, faceDetectionOptions)
 
   const out = faceapi.createCanvasFromMedia(img) as any
@@ -55,6 +54,3 @@ async function run(filename : String,req: Request, res: Response) {
   const detectionResult = await faceLandmarkDetection.run(filename)
   await res.send(detectionResult)
 }
-
-
-// http://localhost:8081/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
