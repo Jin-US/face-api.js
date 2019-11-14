@@ -38,10 +38,10 @@ npm start
 ```
 
 #get rest-api
-Browse to http://localhost:8081/echo?imageUrl='image-url'
+Browse to http://localhost:8080/echo?imageUrl='image-url'
 
 ``` bash
-http://localhost:8081/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/girl.png
+http://localhost:8080/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/girl.png
 ```
 
 # use docker
@@ -52,5 +52,5 @@ docker build -t appname .
 
 run
 ``` bash
-docker run -it -p 8081:8081  appname
+docker run -it -p 8080:8080  appname
 ```
