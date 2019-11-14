@@ -38,10 +38,16 @@ npm start
 ```
 
 #get rest-api
-Browse to http://localhost:8080/echo?imageUrl='image-url'
+
+Browse to http://your-ip-address:8080/echo?imageUrl='image-url'
 
 ``` bash
 http://localhost:8080/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/girl.png
+```
+
+Terminal
+``` bash
+curl http://localhost:8080/echo?imageUrl=https://homepages.cae.wisc.edu/~ece533/images/girl.png
 ```
 
 # use docker
