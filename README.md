@@ -17,46 +17,12 @@
 * **[Easy Face Recognition Tutorial With JavaScript - Video](https://youtu.be/AZ4PdALMqx0)**
 * **[Using face-api.js with Vue.js and Electron](https://medium.com/@andreas.schallwig/do-not-laugh-a-simple-ai-powered-game-3e22ad0f8166)**
 
-## Table of Contents
 
-* **[Features](#features)**
-* **[Running the Examples](#running-the-examples)**
-* **[face-api.js for the Browser](#face-api.js-for-the-browser)**
-* **[face-api.js for Nodejs](#face-api.js-for-nodejs)**
-* **[Usage](#getting-started)**
-  * **[Loading the Models](#getting-started-loading-models)**
-  * **[High Level API](#getting-started-high-level-api)**
-  * **[Displaying Detection Results](#getting-started-displaying-detection-results)**
-  * **[Face Detection Options](#getting-started-face-detection-options)**
-  * **[Utility Classes](#getting-started-utility-classes)**
-  * **[Other Useful Utility](#other-useful-utility)**
-* **[Available Models](#models)**
-  * **[Face Detection](#models-face-detection)**
-  * **[Face Landmark Detection](#models-face-landmark-detection)**
-  * **[Face Recognition](#models-face-recognition)**
-  * **[Face Expression Recognition](#models-face-expression-recognition)**
-  * **[Age Estimation and Gender Recognition](#models-age-and-gender-recognition)**
-* **[API Documentation](https://justadudewhohacks.github.io/face-api.js/docs/globals.html)**
 
 # Features
-
-## Face Recognition
-
-![face-recognition](https://user-images.githubusercontent.com/31125521/57297377-bfcdfd80-70cf-11e9-8afa-2044cb167bff.gif)
-
 ## Face Landmark Detection
 
 ![face_landmark_detection](https://user-images.githubusercontent.com/31125521/57297731-b1ccac80-70d0-11e9-9bd7-59d77f180322.jpg)
-
-## Face Expression Recognition
-
-![preview_face-expression-recognition](https://user-images.githubusercontent.com/31125521/50575270-f501d080-0dfb-11e9-9676-8f419efdade4.png)
-
-## Age Estimation & Gender Recognition
-
-![age_gender_recognition](https://user-images.githubusercontent.com/31125521/57297736-b5603380-70d0-11e9-873d-8b6c7243eb64.jpg)
-
-<a name="running-the-examples"></a>
 
 # Running the Examples
 
