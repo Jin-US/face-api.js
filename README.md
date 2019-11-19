@@ -58,5 +58,5 @@ docker build -t appname .
 
 run
 ``` bash
-docker run -it -p 8080:8080  appname
+docker run -it -p 8080:80 appname
 ```

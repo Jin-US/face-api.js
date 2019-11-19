@@ -7,8 +7,8 @@ app.use('/', require('./routes/echo'))
 
 
 
-app.listen(8080, () => {
-  console.log(`server running on port ${8080}`);
+app.listen(80, () => {
+  console.log(`server running on port ${80}`);
 });
 
 
