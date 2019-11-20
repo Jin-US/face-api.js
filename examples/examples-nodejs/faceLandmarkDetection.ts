@@ -21,7 +21,7 @@ exports.run =async function(filename : String) {
   faceapi.draw.drawDetections(out, results.map(res => res.detection))
   faceapi.draw.drawFaceLandmarks(out, results.map(res => res.landmarks))
 
-  saveFile('faceLandmarkDetection.jpg', out.toBuffer('imWage/jpeg'))
+  saveFile('faceLandmarkDetection.jpg', out.toBuffer('image/jpeg'))
   console.log('done, saved results to out/faceLandmarkDetection.jpg')
 
     return results
