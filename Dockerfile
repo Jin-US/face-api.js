@@ -12,7 +12,7 @@ COPY . .
 ENV PORT 80
 
 RUN cd examples/examples-nodejs && npm install
-RUN npm i canvas @tensorflow/tfjs-node @tensorflow/tfjs-node-gpu
+# RUN npm i canvas @tensorflow/tfjs-node @tensorflow/tfjs-node-gpu
 
 CMD [ "npm", "start" ]
 # CMD [ "node" ]
